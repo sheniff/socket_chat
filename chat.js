@@ -14,15 +14,9 @@ var express = require('express'),
 	rtg,
 	passwd;
 
-console.log("Connecting to nodejitsu redis...")
-conn_url = 'redis://nodejitsu:95d9494bbb7bb8f9e067cd601b9dd566@fish.redistogo.com:9377/';
-rtg = url.parse(conn_url);
-redisClient = redis.createClient(rtg.port, rtg.hostname);
-passwd = rtg.auth.split(':')[1];
-console.log("redis port:"+rtg.port+" hostname:"+rtg.hostname+" passwd:"+passwd);
-redisClient.auth(passwd);
+console.log("Connecting to heroku redis...")
 
-//sessionStore = new RedisStore(redisClient);
+redisClient = require('redis-url').connect(process.env.REDISTOGO_URL);
 
 //Recuperamos listado de nombres ante una eventual caida
 redisClient.del('names');
@@ -132,5 +126,4 @@ app.get('/', function(request, response) {
 	response.sendfile(path.join(__dirname,"index.html"));
 });
 
-// app.listen(80);
-app.listen(7777);
+app.listen(process.env.PORT || 7777);

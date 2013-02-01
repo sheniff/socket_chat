@@ -1,7 +1,7 @@
 (function(){
 	//Vars
-	var //server = io.connect('http://sheniff.chat.jit.su:80'),
-		server = io.connect('http://localhost:7777'),
+	var server = io.connect('http://stark-oasis-8936.herokuapp.com'),
+		// server = io.connect('http://localhost:7777'),
 		nickname;
 
 	server.on('connect', function(data){
