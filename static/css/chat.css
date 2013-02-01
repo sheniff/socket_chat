@@ -1,0 +1,148 @@
+body {
+	padding: 1em;
+	overflow: hidden;
+}
+h1 {
+	font-size: 50px;
+	margin-top: 0;
+	font-family: Arial, sans-serif;
+	text-shadow: 2px 0px 15px #292929;
+	letter-spacing: 0px;
+	text-decoration: none;
+	color: #fff;
+}
+
+div.block {
+	overflow: hidden;
+}
+
+ul.block {
+   	display: block;
+    float: left;
+    border: 1px solid #ccc;
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+    height: 300px;
+    overflow: auto;
+}
+	
+	#chat_windows {
+		overflow: hidden;
+		float: left;
+		clear: both;
+	}
+
+	#connection_list {
+		width: 100px;
+	}
+	
+	#connection_list li {
+		color: #999;
+	}
+
+	#message_list{
+	width: 400px;
+	font-family: helvetica, sans-serif;
+	line-height: 16px;
+	font-size: 16px;
+	}
+
+	#message_list li{
+		margin-bottom: 10px;
+	}
+
+	#message_list .server{
+	color: #BBBBBB;
+	font-size: 14px;
+	font-style: italic;
+}
+
+	#message_list .me{
+	color: #33e;
+	text-align: left;
+}
+
+	#message_list .client{
+	text-align: right;
+}
+
+#chat_form{
+	float: left;
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+
+#chat_input {
+	border: 1px solid #ccc;
+	margin: 0;
+	float: left;
+	width: 480px;
+	padding: 10px;
+	font-size: 20px;
+	font-size: 20px;
+}
+
+#send_button {
+	float: left;
+	width: 82px;
+	margin: 0;
+	border: 1px solid #888;
+	height: 45px;
+	cursor: pointer;
+}
+
+/* --------------------------------------------------------------------
+   Media Queries
+-------------------------------------------------------------------- */
+
+/* < 500px */
+@media screen and (max-width: 500px) {
+  	h1 {
+  		display: none;
+  	}
+
+  	body {
+  		margin: 0;
+  		padding: 0;
+  	}
+
+  	form#chat_form {
+  		width: 100%;
+  	}
+
+  	input#chat_input {
+  		width: 90%;
+  		padding: 9px 0;
+  		border: 0;
+  		outline: 1px solid #ccc;
+  		font-size: 16px;
+  	}
+
+  	input#send_button {
+  		width: 10%;
+  		border: 0;
+  		outline: 1px solid #888;
+  		height: 37px;
+  	}
+
+  	#chat_windows {
+  		width: 100%;
+  	}
+
+  	#connection_list {
+  		display: none;
+  	}
+
+  	#message_list {
+  		height: 100%;
+  		width: 100%;
+  		padding: 0;
+  	}
+
+  	#message_list li.client {
+  		margin-left: 20px;
+  		margin-right: 20px;
+  	}
+}

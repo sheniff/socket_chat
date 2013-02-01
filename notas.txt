@@ -1,0 +1,2 @@
+#Para hacer pruebas (en un shell)
+redis-cli -h fish.redistogo.com -p 9377 -a 95d9494bbb7bb8f9e067cd601b9dd566
